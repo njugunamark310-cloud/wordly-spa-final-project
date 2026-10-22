@@ -15,5 +15,22 @@ searchForm.addEventListener("submit", function (event) {
   console.log("word entered:", word);
 });
 
+// API conntection part
+
+async function fetchWord(word) {
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        throw new Error("Word not found.");
+    }
+
+    const data = await response.json();
+
+    return data;
+    
+}
+
 
 
