@@ -155,3 +155,24 @@ body {
     font-style: italic;
     margin-bottom: 15px;
 }
+
+.definition-item {
+    margin-top: 18px;
+    padding: 15px;
+    background-color: #f8fafc;
+    border-left: 4px solid #8b5cf6;
+    border-radius: 8px;
+}
+
+.definition-item p {
+    color: #334155;
+    margin-top: 5px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 20px;
+    color: #64748b;
+    font-size: 14px;
+}
