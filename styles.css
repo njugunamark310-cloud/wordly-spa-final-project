@@ -58,9 +58,9 @@ body {
     font-size: 16px;
 }
 
-.main ::content {
-    width: 90%;
-    max-width: 850px;
+.main-content {
+    width: 92%;
+    max-width: 1050px;
     margin: 0 auto;
     padding: 20px 0;
 }
