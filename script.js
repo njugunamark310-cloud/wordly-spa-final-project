@@ -14,22 +14,36 @@ searchForm.addEventListener("submit", async function (event) {
   }
 
   try {
-    const data = await fetchWord(word);
-    console.log("Dictionary data:", data);
-  } catch (error) {
-    errorMessage.hidden = false;
-    errorMessage.textContent =
-     "Unable to retrieve this word. Please check your connection and try again.";
+  const data = await fetchWord(word);
 
-    console.log("Error:", error.message);
-  }
+  const entry = data.entries[0];
+  const definition = entry.senses[0].definition;
+
+  document.querySelector("#results").innerHTML = `
+    <h2 class="word-heading">${word}</h2>
+    <p class="part-of-speech">
+      ${entry.partOfSpeech}
+    </p>
+    <div class="definition-item">
+      <p>${definition}</p>
+    </div>
+  `;
+}
+
+catch (error) {
+  errorMessage.hidden = false;
+  errorMessage.textContent =
+    "Unable to retrieve this word. Please check your connection and try again.";
+
+  console.log("Error:", error.message);
+}
 
 
 
 // API conntection part
 
 async function fetchWord(word) {
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`;
+    const url = `https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(word)}`;
 
     const response = await fetch(url);
 
