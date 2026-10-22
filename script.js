@@ -6,7 +6,14 @@ searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const word = wordInput.value.trim();
+// code for handling empty input 
+  if (word === "") {
+    console.log("please enter a word");
+    return;
+  }
 
   console.log("word entered:", word);
 });
+
+
 
