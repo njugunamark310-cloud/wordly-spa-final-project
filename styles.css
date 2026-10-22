@@ -142,6 +142,8 @@ body {
     box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
 }
 
+
+
 .empty-message {
     text-align: center;
     color: #64748b;
@@ -210,4 +212,12 @@ body {
   .logo h1 {
     font-size: 32px;
   }
+}
+
+#error-message {
+  color: #dc2626;
+  background-color: #fef2f2;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
 }

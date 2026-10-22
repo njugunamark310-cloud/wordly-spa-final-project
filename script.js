@@ -1,6 +1,6 @@
 const searchForm =document.querySelector("#search-form");
 const wordInput =document.querySelector("#word-input");
-const errorMessage =document.querySelector("error-message");
+const errorMessage =document.querySelector("#error-message");
 
 // listen for submission of form
 searchForm.addEventListener("submit", async function (event) {
@@ -19,7 +19,7 @@ searchForm.addEventListener("submit", async function (event) {
   } catch (error) {
     errorMessage.hidden = false;
     errorMessage.textContent =
-     "Sorry, the dictionary service is temporarily unavailable. Please try again later.";
+     "Unable to retrieve this word. Please check your connection and try again.";
 
     console.log("Error:", error.message);
   }
