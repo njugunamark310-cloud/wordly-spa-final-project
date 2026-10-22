@@ -2,7 +2,7 @@ const searchForm =document.querySelector("#search-form");
 const wordInput =document.querySelector("#word-input");
 
 // listen for submission of form
-searchForm.addEventListener("submit", function (event) {
+searchForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const word = wordInput.value.trim();
@@ -12,8 +12,13 @@ searchForm.addEventListener("submit", function (event) {
     return;
   }
 
-  console.log("word entered:", word);
-});
+  try {
+    const data = await fetchWord(word);
+    console.log("Dictionary data:", data);
+  } catch (error) {
+
+  console.log("Error:, error.message");
+}
 
 // API conntection part
 
@@ -31,6 +36,7 @@ async function fetchWord(word) {
     return data;
     
 }
+
 
 
 
