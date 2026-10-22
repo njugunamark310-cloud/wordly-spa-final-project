@@ -136,3 +136,10 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
 }
+
+.empty-message {
+    text-align: center;
+    color: #64748b;
+    padding: 25px 10px;
+    font-size: 16px;
+}
