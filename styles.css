@@ -105,3 +105,25 @@ body {
     transform:border-color 0.3s, box-shadow 0.3s;
 
 }
+
+.search-box input:focus {
+     border-color: #8b5cf6;
+     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.search-box button {
+    padding: 15px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.35);
+}
