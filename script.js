@@ -5,7 +5,8 @@ const wordInput =document.querySelector("#word-input");
 searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const word = wordInput.ariaValueMax.trim();
+  const word = wordInput.value.trim();
 
   console.log("word entered:", word);
 });
+
