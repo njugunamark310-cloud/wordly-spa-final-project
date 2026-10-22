@@ -176,3 +176,33 @@ body {
     color: #64748b;
     font-size: 14px;
 }
+
+@media (max-width: 600px) {
+  .main-content {
+    width: 94%;
+  }
+
+  .search-section {
+    padding: 22px;
+  }
+
+  .search-section h2 {
+    font-size: 24px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .results-section {
+    padding: 20px;
+  }
+
+  .logo h1 {
+    font-size: 32px;
+  }
+}
