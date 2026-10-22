@@ -1,5 +1,6 @@
 const searchForm =document.querySelector("#search-form");
 const wordInput =document.querySelector("#word-input");
+const errorMessage =document.querySelector("error-message");
 
 // listen for submission of form
 searchForm.addEventListener("submit", async function (event) {
@@ -16,9 +17,14 @@ searchForm.addEventListener("submit", async function (event) {
     const data = await fetchWord(word);
     console.log("Dictionary data:", data);
   } catch (error) {
+    errorMessage.hidden = false;
+    errorMessage.textContent =
+     "Sorry, the dictionary service is temporarily unavailable. Please try again later.";
 
-  console.log("Error:, error.message");
-}
+    console.log("Error:", error.message);
+  }
+
+
 
 // API conntection part
 
