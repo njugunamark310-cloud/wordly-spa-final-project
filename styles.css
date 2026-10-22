@@ -86,3 +86,22 @@ body {
     font-weight: bold;
     color: #e0e7ff;
 }
+
+.search-box {
+    display: flex;
+    gap: 12px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid #4b5563;
+    border-radius: 12px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-size: 16px;
+    outline: none;
+    transform:border-color 0.3s, box-shadow 0.3s;
+
+}
