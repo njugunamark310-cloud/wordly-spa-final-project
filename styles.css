@@ -68,3 +68,21 @@ body {
     border-radius: 20px;
     box-shadow: 0 12px 35px rgba(49, 46, 129, 0.2);
 }
+
+.search-section h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.search-section > p {
+    color: #c4b5fd;
+    margin-bottom: 24px;
+}
+
+.search-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #e0e7ff;
+}
