@@ -6,8 +6,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f6fb;
-  color: #1e293b;
+  background: radial-gradient(
+    ellipse at top,
+    #25204a 0%,
+    #111827 55%,
+    #080b14 100%
+  );
+  color: #f8fafc;
   line-height: 1.6;
   min-height: 100vh;
 }
