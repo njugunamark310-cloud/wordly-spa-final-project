@@ -221,3 +221,11 @@ body {
   margin-top: 12px;
   border-radius: 8px;
 }
+
+.pronunciation {
+  color: #2a0384;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 8px 0 20px;
+  line-height: 1.6;
+}
