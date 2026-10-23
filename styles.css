@@ -229,3 +229,12 @@ body {
   margin: 8px 0 20px;
   line-height: 1.6;
 }
+
+.example-item {
+  background: #f3f0ff;
+  border-left: 4px solid #8b5cf6;
+  padding: 14px 18px;
+  margin-top: 18px;
+  border-radius: 8px;
+  color: #000000;
+}
