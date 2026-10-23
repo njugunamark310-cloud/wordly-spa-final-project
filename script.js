@@ -73,7 +73,7 @@ searchForm.addEventListener("submit", async function (event) {
 
   errorMessage.hidden = true;
   errorMessage.textContent ="";
-  
+
 // code for handling empty input 
 
   if (word === "") {
@@ -90,6 +90,7 @@ searchForm.addEventListener("submit", async function (event) {
   const definition = entry.senses[0].definition;
   const example = entry.senses[0].examples?.[0];
   const synonyms = entry.senses[0].synonyms || [];
+  console.log("All word senses:", entry.senses);
 
   const pronunciation = entry.pronunciations.find(
     (item) => item.type === "ipa"
@@ -107,9 +108,10 @@ searchForm.addEventListener("submit", async function (event) {
     <p class="pronunciation">${pronunciation?.text || ""}</p>
 
     <div class="definition-item">
+      <h3>Definition</h3>
       <p>${definition}</p>
-    </div>
-  
+      </div>
+      
     ${example ? `
   <div class="example-item">
     <h3>Example</h3>

@@ -176,6 +176,12 @@ body {
     margin-top: 5px;
 }
 
+
+.definition-item h3 {
+  color: #38417a;
+}
+
+
 .site-footer {
     text-align: center;
     padding: 30px 15px;
@@ -253,7 +259,7 @@ body {
 }
 
 .synonyms-item {
-  background: #eef6ff;
+  background: #91c5ff;
   border-left: 4px solid #3b82f6;
   padding: 14px 18px;
   margin-top: 18px;
