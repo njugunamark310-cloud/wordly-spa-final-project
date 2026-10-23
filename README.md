@@ -23,7 +23,7 @@
 
 ## Getting Started
 
-1. Clone this repository.
+1. Clone this repository:git@github.com:njugunamark310-cloud/wordly-spa-final-project.git.
 2. Open the project folder.
 3. Open `index.html` in your browser, or use the Live Server extension in Visual Studio Code.
 4. Enter an English word in the search field and submit it.
