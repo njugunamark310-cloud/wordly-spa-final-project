@@ -55,7 +55,7 @@ Building Wordly SPA helped me practise:
 
 ## Author
 
-Created as a JavaScript learning project.
+Mark Mwichigi
 
 
 
