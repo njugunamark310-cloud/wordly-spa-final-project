@@ -28,6 +28,8 @@ searchForm.addEventListener("submit", async function (event) {
     (item) => item.type === "ipa"
   );
 
+  console.log("Pronunciation data:", entry.pronunciations);
+
   document.querySelector("#results").innerHTML = `
     <h2 class="word-heading">${word}</h2>
 
