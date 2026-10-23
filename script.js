@@ -3,7 +3,7 @@ const wordInput =document.querySelector("#word-input");
 const errorMessage =document.querySelector("#error-message");
 const speakButton = document.querySelector("#speak-button");
 const favoritesList = document.querySelector("#favorites-list");
-const favouritesSection = document.querySelector("#favorites-section");
+
 
 // code for favorites
 let favorites =[];
@@ -93,14 +93,12 @@ searchForm.addEventListener("submit", async function (event) {
   const synonyms = [
   ...new Set(entry.senses.flatMap((sense) => sense.synonyms || []))
   ];
-  
-  console.log("All word senses:", entry.senses);
+
 
   const pronunciation = entry.pronunciations.find(
     (item) => item.type === "ipa"
   );
 
-  console.log("Pronunciation data:", entry.pronunciations);
 
   document.querySelector("#results").innerHTML = `
     <h2 class="word-heading">${word}</h2>
