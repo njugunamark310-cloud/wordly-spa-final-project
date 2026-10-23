@@ -8,6 +8,7 @@ searchForm.addEventListener("submit", async function (event) {
 
   const word = wordInput.value.trim();
 // code for handling empty input 
+
   if (word === "") {
     console.log("please enter a word");
     return;
@@ -16,19 +17,44 @@ searchForm.addEventListener("submit", async function (event) {
   try {
   const data = await fetchWord(word);
 
-  const entry = data.entries[0];
+
+ const entry = data.entries[0];
+
   const definition = entry.senses[0].definition;
+  const example = entry.senses[0].examples?.[0];
+  const synonyms = entry.senses[0].synonyms || [];
+
+  const pronunciation = entry.pronunciations.find(
+    (item) => item.type === "ipa"
+  );
 
   document.querySelector("#results").innerHTML = `
     <h2 class="word-heading">${word}</h2>
-    <p class="part-of-speech">
-      ${entry.partOfSpeech}
-    </p>
+
+    <p class="part-of-speech">${entry.partOfSpeech}</p>
+
+    <p class="pronunciation">${pronunciation?.text || ""}</p>
+
     <div class="definition-item">
       <p>${definition}</p>
     </div>
-  `;
+  
+    ${example ? `
+  <div class="example-item">
+    <h3>Example</h3>
+    <p>${example}</p>
+  </div>
+` : ""}
+
+    ${synonyms.length > 0 ? `
+  <div class="synonyms-item">
+    <h3>Synonyms</h3>
+    <p>${synonyms.join(", ")}</p>
+  </div>
+  ` : ""}
+ `;
 }
+
 
 catch (error) {
   errorMessage.hidden = false;
