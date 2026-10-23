@@ -1,6 +1,25 @@
 const searchForm =document.querySelector("#search-form");
 const wordInput =document.querySelector("#word-input");
 const errorMessage =document.querySelector("#error-message");
+const speakButton = document.querySelector("#speak-button");
+
+// new implementation of voice pronunciation
+speakButton.addEventListener("click", function () {
+  const word = wordInput.value.trim();
+
+  if (word === "") {
+    wordInput.focus();
+    return;
+  }
+
+  const speech = new SpeechSynthesisUtterance(word);
+  speech.lang ="en-US";
+
+
+  window.speechSynthesis.speak(speech);
+});
+
+
 
 // listen for submission of form
 searchForm.addEventListener("submit", async function (event) {
