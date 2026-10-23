@@ -136,8 +136,8 @@ body {
 .results-section {
     margin-top: 28px;
     padding: 30px;
-    background-color:  #ffffff;
-    border: 1px solid #e2e8f0;
+    background-color:  #1e1b4b;
+    border: 1px solid #1e1b4b;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
 }
@@ -166,7 +166,7 @@ body {
 .definition-item {
     margin-top: 18px;
     padding: 15px;
-    background-color: #f8fafc;
+    background-color: #9fcaf6;
     border-left: 4px solid #8b5cf6;
     border-radius: 8px;
 }
@@ -223,7 +223,7 @@ body {
 }
 
 .pronunciation {
-  color: #2a0384;
+  color: #fbf9ff;
   font-size: 1rem;
   font-style: italic;
   margin: 8px 0 20px;
