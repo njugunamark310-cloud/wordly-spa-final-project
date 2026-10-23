@@ -18,13 +18,34 @@ function displayFavorites() {
 
   favorites.forEach(function (word) {
     const listItem = document.createElement("li");
-    listItem.textContent = word;
 
+    const wordText = document.createElement("span");
+    wordText.textContent = word;
+
+
+const removeButton = document.createElement("button");
+removeButton.textContent = "Remove";
+removeButton.type = "button";
+
+removeButton.addEventListener("click", function() {
+  favorites = favorites.filter(function (favorite) {
+    return favorite !== word;
+
+  });
+
+  saveFavorites();
+  displayFavorites();
+
+});
+
+ listItem.appendChild(wordText);
+    listItem.appendChild(removeButton);
     favoritesList.appendChild(listItem);
   });
 }
 
 displayFavorites();
+
 
 // new implementation of voice pronunciation
 speakButton.addEventListener("click", function () {
@@ -100,9 +121,7 @@ searchForm.addEventListener("submit", async function (event) {
   ` : ""}
  `;
 
- 
-
-  const favoriteButton = document.querySelector("#favorite-button");
+ const favoriteButton = document.querySelector("#favorite-button");
 
   favoriteButton.addEventListener("click", function () {
   if (!favorites.includes(word)) {
