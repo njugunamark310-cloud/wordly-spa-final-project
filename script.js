@@ -89,7 +89,11 @@ searchForm.addEventListener("submit", async function (event) {
 
   const definition = entry.senses[0].definition;
   const example = entry.senses[0].examples?.[0];
-  const synonyms = entry.senses[0].synonyms || [];
+
+  const synonyms = [
+  ...new Set(entry.senses.flatMap((sense) => sense.synonyms || []))
+  ];
+  
   console.log("All word senses:", entry.senses);
 
   const pronunciation = entry.pronunciations.find(
@@ -111,7 +115,7 @@ searchForm.addEventListener("submit", async function (event) {
       <h3>Definition</h3>
       <p>${definition}</p>
       </div>
-      
+
     ${example ? `
   <div class="example-item">
     <h3>Example</h3>
@@ -148,6 +152,8 @@ searchForm.addEventListener("submit", async function (event) {
   console.log("Error:", error.message);
 }
 
+});
+
 
 
 // API conntection part
@@ -163,10 +169,9 @@ async function fetchWord(word) {
 
     const data = await response.json();
 
-    return data;
-    
+if (!data.entries || data.entries.length === 0) {
+    throw new Error("No dictionary entry found.");
 }
 
-
-
-})
+    return data;
+}
