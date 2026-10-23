@@ -1,83 +1,61 @@
-Features
 
-Word Search: Search for English words using the Free Dictionary API.
 
-Definitions: View word definitions and parts of speech.
+## Features
 
-Pronunciation: Display IPA pronunciation and listen to words using text-to-speech.
+- **Word Search:** Search for English words using the Free Dictionary API.
+- **Definitions:** View word definitions and parts of speech.
+- **Pronunciation:** Display IPA pronunciation and listen to words using text-to-speech.
+- **Examples:** View example sentences when available.
+- **Synonyms:** Explore synonyms when the API provides them.
+- **Favorites:** Save favorite words, remove them, and keep them stored across page refreshes using local storage.
+- **Error Handling:** Display a helpful message when a word cannot be retrieved.
+- **Responsive Design:** Use the application on desktop and mobile screens.
 
-Examples: View example sentences when available.
+## Technologies Used
 
-Synonyms: Explore synonyms when the API provides them.
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Fetch API and async/await
+- Free Dictionary API
+- Browser Speech Synthesis API
+- Local Storage
 
-Favorites: Save favorite words, remove them, and keep them stored across page refreshes using local storage.
+## Getting Started
 
-Error Handling: Display a helpful message when a word cannot be retrieved.
-
-Responsive Design: Use the application on desktop and mobile screens.
-
-Technologies Used
-
-HTML5
-
-CSS3
-
-JavaScript (ES6+)
-
-Fetch API and async/await
-
-Free Dictionary API
-
-Browser Speech Synthesis API
-
-Local Storage
-
-Getting Started
-
-Clone this repository.
-
-Open the project folder.
-
-Open index.html in your browser, or use the Live Server extension in Visual Studio Code.
-
-Enter an English word in the search field and submit it.
+1. Clone this repository.
+2. Open the project folder.
+3. Open `index.html` in your browser, or use the Live Server extension in Visual Studio Code.
+4. Enter an English word in the search field and submit it.
 
 An internet connection is required to retrieve dictionary entries.
 
-API
+## API
 
-This project uses the Free Dictionary API to retrieve English word information.
+This project uses the [Free Dictionary API](https://freedictionaryapi.com/) to retrieve English word information.
 
-What I Learned
+## What I Learned
 
 Building Wordly SPA helped me practise:
 
-Working with external APIs using fetch().
+- Working with external APIs using `fetch()`.
+- Handling asynchronous JavaScript with `async/await`.
+- Updating the DOM dynamically.
+- Handling form submissions and button events.
+- Managing errors and missing data.
+- Using arrays and `Set` to collect unique synonyms.
+- Saving application data with `localStorage`.
+- Using browser text-to-speech functionality.
 
-Handling asynchronous JavaScript with async/await.
+## Future Improvements
 
-Updating the DOM dynamically.
+- Display multiple definitions for each word.
+- Add pronunciation audio from dictionary sources when available.
+- Improve filtering and organization of favorite words.
 
-Handling form submissions and button events.
+## Author
 
-Managing errors and missing data.
+Created as a JavaScript learning project.
 
-Using arrays and Set to collect unique synonyms.
-
-Saving application data with localStorage.
-
-Using browser text-to-speech functionality.
-
-Future Improvements
-
-Display multiple definitions for each word.
-
-Add pronunciation audio from dictionary sources when available.
-
-Improve filtering and organization of favorite words.
-
-Author
-
-Mark Mwichigi
 
 
