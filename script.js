@@ -2,6 +2,29 @@ const searchForm =document.querySelector("#search-form");
 const wordInput =document.querySelector("#word-input");
 const errorMessage =document.querySelector("#error-message");
 const speakButton = document.querySelector("#speak-button");
+const favoritesList = document.querySelector("#favorites-list");
+const favouritesSection = document.querySelector("#favorites-section");
+
+// code for favorites
+let favorites =[];
+favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+function saveFavorites() {
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function displayFavorites() {
+  favoritesList.innerHTML = "";
+
+  favorites.forEach(function (word) {
+    const listItem = document.createElement("li");
+    listItem.textContent = word;
+
+    favoritesList.appendChild(listItem);
+  });
+}
+
+displayFavorites();
 
 // new implementation of voice pronunciation
 speakButton.addEventListener("click", function () {
@@ -52,6 +75,8 @@ searchForm.addEventListener("submit", async function (event) {
   document.querySelector("#results").innerHTML = `
     <h2 class="word-heading">${word}</h2>
 
+    <button type="button" id="favorite-button"> Add to Favorites</button>
+
     <p class="part-of-speech">${entry.partOfSpeech}</p>
 
     <p class="pronunciation">${pronunciation?.text || ""}</p>
@@ -74,10 +99,20 @@ searchForm.addEventListener("submit", async function (event) {
   </div>
   ` : ""}
  `;
-}
 
+ 
 
-catch (error) {
+  const favoriteButton = document.querySelector("#favorite-button");
+
+  favoriteButton.addEventListener("click", function() {
+    if(!favorites.includes(word)) {
+      favorites.push(word);
+      saveFavorites();
+      displayFavorites();
+    }
+  });
+
+} catch (error) {
   errorMessage.hidden = false;
   errorMessage.textContent =
     "Unable to retrieve this word. Please check your connection and try again.";
