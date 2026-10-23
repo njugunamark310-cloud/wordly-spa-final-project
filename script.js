@@ -70,6 +70,10 @@ searchForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const word = wordInput.value.trim();
+
+  errorMessage.hidden = true;
+  errorMessage.textContent ="";
+  
 // code for handling empty input 
 
   if (word === "") {
