@@ -104,13 +104,16 @@ searchForm.addEventListener("submit", async function (event) {
 
   const favoriteButton = document.querySelector("#favorite-button");
 
-  favoriteButton.addEventListener("click", function() {
-    if(!favorites.includes(word)) {
-      favorites.push(word);
-      saveFavorites();
-      displayFavorites();
-    }
-  });
+  favoriteButton.addEventListener("click", function () {
+  if (!favorites.includes(word)) {
+    favorites.push(word);
+    saveFavorites();
+    displayFavorites();
+  }
+
+  favoriteButton.textContent = "Added !";
+  favoriteButton.disabled = true;
+});
 
 } catch (error) {
   errorMessage.hidden = false;
