@@ -433,5 +433,14 @@ body {
   gap: 0.4rem;
 }
 
+.loading,
+.empty {
+  color: #5b6472;
+}
+
+#error-message {
+  color: #b3261e;
+}
+
 
 
