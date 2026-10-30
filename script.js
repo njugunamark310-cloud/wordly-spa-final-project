@@ -12,40 +12,66 @@ const canSpeak = "speechSynthesis" in window;
 
 
 // code for favorites
-let favorites =[];
-favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+function loadFavorites() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+let favorites = loadFavorites();
 
 function saveFavorites() {
-  localStorage.setItem("favorites", JSON.stringify(favorites));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+  } catch {
+  
+  }
+}
+
+const isFavorite = (word) => favorites.includes(word.toLowerCase());
+
+function toggleFavorite(word) {
+  const key = word.toLowerCase();
+  favorites = isFavorite(key)
+    ? favorites.filter((f) => f !== key)
+    : [...favorites, key];
+  saveFavorites();
+  displayFavorites();
 }
 
 function displayFavorites() {
-  favoritesList.innerHTML = "";
+  favoritesList.replaceChildren();
 
-  favorites.forEach(function (word) {
+  if (favorites.length === 0) {
+    const empty = document.createElement("li");
+    empty.textContent = "No favorites yet.";
+    favoritesList.appendChild(empty);
+    return;
+  }
+
+  favorites.forEach((word) => {
     const listItem = document.createElement("li");
 
-    const wordText = document.createElement("span");
-    wordText.textContent = word;
+    // clicking the word searches it again
+    const wordButton = document.createElement("button");
+    wordButton.type = "button";
+    wordButton.className = "favorite-word";
+    wordButton.textContent = word;
+    wordButton.addEventListener("click", () => {
+      wordInput.value = word;
+      searchWord(word); // defined in Section 4
+    });
 
+    const removeButton = document.createElement("button");
+    removeButton.type = "button";
+    removeButton.textContent = "Remove";
+    removeButton.setAttribute("aria-label", `Remove ${word} from favorites`);
+    removeButton.addEventListener("click", () => toggleFavorite(word));
 
-const removeButton = document.createElement("button");
-removeButton.textContent = "Remove";
-removeButton.type = "button";
-
-removeButton.addEventListener("click", function() {
-  favorites = favorites.filter(function (favorite) {
-    return favorite !== word;
-
-  });
-
-  saveFavorites();
-  displayFavorites();
-
-});
-
- listItem.appendChild(wordText);
-    listItem.appendChild(removeButton);
+    listItem.append(wordButton, removeButton);
     favoritesList.appendChild(listItem);
   });
 }
