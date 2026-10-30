@@ -1,5 +1,3 @@
-
-
 ## Features
 
 - **Word Search:** Search for English words using the Free Dictionary API.
@@ -53,12 +51,11 @@ Building Wordly SPA helped me practise:
 - Add pronunciation audio from dictionary sources when available.
 - Improve filtering and organization of favorite words.
 
-## Live site
+## Live site 
 https://njugunamark310-cloud.github.io/wordly-spa-final-project/
 
 ## Author
 
 Mark Mwichigi
-
 
 
