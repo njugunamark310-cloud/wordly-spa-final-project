@@ -6,6 +6,10 @@ const favoritesList = document.querySelector("#favorites-list");
 const resultsEl = document.querySelector("#results");
 const submitButton = searchForm.querySelector('[type="submit"]');
 
+const API_URL = "https://freedictionaryapi.com/api/v1/entries/en/";
+const STORAGE_KEY = "favorites";
+const canSpeak = "speechSynthesis" in window;
+
 
 // code for favorites
 let favorites =[];
