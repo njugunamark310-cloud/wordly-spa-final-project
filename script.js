@@ -3,6 +3,8 @@ const wordInput =document.querySelector("#word-input");
 const errorMessage =document.querySelector("#error-message");
 const speakButton = document.querySelector("#speak-button");
 const favoritesList = document.querySelector("#favorites-list");
+const resultsEl = document.querySelector("#results");
+const submitButton = searchForm.querySelector('[type="submit"]');
 
 
 // code for favorites
