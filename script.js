@@ -80,22 +80,13 @@ displayFavorites();
 
 
 // new implementation of voice pronunciation
-speakButton.addEventListener("click", function () {
-  const word = wordInput.value.trim();
-
-  if (word === "") {
-    wordInput.focus();
-    return;
-  }
-
-  const speech = new SpeechSynthesisUtterance(word);
-  speech.lang ="en-US";
-
-
-  window.speechSynthesis.speak(speech);
-});
-
-
+function speak(text) {
+  if (!canSpeak || !text) return;
+  window.speechSynthesis.cancel(); // stop anything still playing
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "en-US";
+  window.speechSynthesis.speak(utterance);
+}
 
 // listen for submission of form
 searchForm.addEventListener("submit", async function (event) {
