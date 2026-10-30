@@ -350,3 +350,17 @@ body {
   color: #000000;
 }
 
+.result-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-header .word-heading {
+  margin: 0;
+  margin-right: auto;
+  text-transform: capitalize;
+}
+
