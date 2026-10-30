@@ -217,7 +217,7 @@ function renderResults(data, searchedWord) {
     .find(Boolean);
 
   if (audioUrl || canSpeak) {
-    const listen = el("button", "listen-button", "🔊 Listen");
+    const listen = el("button", "listen-button", "Listen");
     listen.type = "button";
     listen.setAttribute("aria-label", `Hear the pronunciation of ${word}`);
     listen.addEventListener("click", () => playPronunciation(word, audioUrl));
