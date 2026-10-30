@@ -391,3 +391,47 @@ body {
   border-color: #e0b400;
 }
 
+.entry {
+  border-top: 1px solid #e3e6eb;
+  padding: 1rem 0;
+}
+
+.part-of-speech {
+  font-style: italic;
+  color: #f4f5f7;
+  margin: 0;
+}
+
+.pronunciation {
+  color: #e2e2e2;
+  margin: 0.1rem 0 0.5rem;
+}
+
+.senses,
+.subsenses {
+  padding-left: 1.3rem;
+}
+
+.sense {
+  margin-bottom: 0.8rem;
+}
+
+.example {
+  color: #d1d1d2;
+  font-style: italic;
+  margin: 0.2rem 0;
+}
+
+.sense-synonyms {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.synonym-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+
+
