@@ -378,3 +378,16 @@ body {
   transition: background 0.15s, border-color 0.15s;
 }
 
+.listen-button:hover,
+.favorite-button:hover,
+.synonym-chip:hover,
+.favorite-word:hover {
+  background: #eef3ff;
+  border-color: #6b8cff;
+}
+
+.favorite-button[aria-pressed="true"] {
+  background: #fff6d6;
+  border-color: #e0b400;
+}
+
