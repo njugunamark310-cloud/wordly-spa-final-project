@@ -88,6 +88,30 @@ function speak(text) {
   window.speechSynthesis.speak(utterance);
 }
 
+function playPronunciation(word, audioUrl) {
+  if (audioUrl) {
+    new Audio(audioUrl).play().catch(() => speak(word));
+  } else {
+    speak(word);
+  }
+}
+
+if (canSpeak) {
+  speakButton.addEventListener("click", () => {
+    const word = wordInput.value.trim();
+
+    if (word === "") {
+      showError("Type a word first to hear it spoken.");
+      wordInput.focus();
+      return;
+    }
+
+    speak(word);
+  });
+} else {
+  speakButton.hidden = true; // browser can't do it, so don't show a dead button
+}
+
 // listen for submission of form
 searchForm.addEventListener("submit", async function (event) {
   event.preventDefault();
