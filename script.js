@@ -137,7 +137,7 @@ function setLoading(isLoading) {
 
 function updateFavoriteButton(button) {
   const saved = isFavorite(button.dataset.word);
-  button.textContent = saved ? "★ In Favorites (click to remove)" : "☆ Add to Favorites";
+  button.textContent = saved ? "★ In Favorites (click to remove)" : " Add to Favorites";
   button.setAttribute("aria-pressed", String(saved));
 }
 
@@ -217,7 +217,7 @@ function renderResults(data, searchedWord) {
     .find(Boolean);
 
   if (audioUrl || canSpeak) {
-    const listen = el("button", "listen-button", "Listen");
+    const listen = el("button", "listen-button", " Listen");
     listen.type = "button";
     listen.setAttribute("aria-label", `Hear the pronunciation of ${word}`);
     listen.addEventListener("click", () => playPronunciation(word, audioUrl));
